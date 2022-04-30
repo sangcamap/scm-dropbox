@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
+
+
 
 export default function Button() {
+  const [count, setCount] = useState(0)
 
-  const sayHello = () => {
-    alert("Hello")
+  const plus = () => {
+    setCount (count + 1)
   } 
 
   return (
-    <div className='Button' onClick={sayHello}> click ! </div>
+    <div className='Button' onClick={plus}> click ! {count} </div>
   )
 }
