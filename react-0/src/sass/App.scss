@@ -1,0 +1,18 @@
+@import './Box.scss';
+@import './Button.scss';
+@import './Background.scss';
+
+.App{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    .Group{
+        
+        display: flex;
+        gap: 20px;
+    }
+}

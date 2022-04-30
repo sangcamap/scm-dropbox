@@ -1,4 +1,4 @@
-import squareNumber , { pi } from "./book.js";
+import squareNumber , { pi } from "./func.js";
 // Phải thêm type: module vào package.json 
 
 

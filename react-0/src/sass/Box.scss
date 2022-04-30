@@ -1,0 +1,21 @@
+.box{
+    width: 600px;
+    height: 100px;
+    background: rgb(0, 0, 0);
+    position: relative;
+
+    &__content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: larger;
+        font-weight: 500;
+        color: #fff;
+        padding: 20px 40px;
+    }
+}
+
+
+
+
