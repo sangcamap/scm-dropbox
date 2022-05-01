@@ -13,8 +13,9 @@
     position: relative;
     overflow: hidden;
     .Group{
-        flex-direction: column;
-        display: flex;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 40px;
+
     }
 }
