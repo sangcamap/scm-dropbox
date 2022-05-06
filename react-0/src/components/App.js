@@ -2,8 +2,13 @@ import '../sass/App.scss';
 import Box from'./Box';
 import Button, { Temp } from './Button';
 import Background from './Background';
-import { useContext , useState , useRef } from 'react';
+import { useContext, createContext , useState , useRef } from 'react';
+import ComB from './ComB'; 
+import ComC from './ComC'; 
+import { Provider, data } from './Provider';
 
+
+export const box2 = createContext()
 
 
 function App() {
@@ -18,6 +23,8 @@ function App() {
     clearInterval(ref.current)
   } 
   //BOX-2//
+ 
+  const dataFromProvider = useContext(data)
 
 
   return (
@@ -29,7 +36,15 @@ function App() {
               <button onClick={onStart}>Start</button>
               <button onClick= {onStop}>Stop</button>
           </Box>
-          <Box></Box>
+          <Box>
+            <Provider>
+            <box2.Provider value={{name: 'Sang', age: '12'}}>
+                <ComB></ComB>
+                <ComC></ComC>
+                
+            </box2.Provider>
+            </Provider>
+          </Box>
           <Box></Box>
           <Box></Box>
           <Box></Box>
