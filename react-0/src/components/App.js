@@ -2,7 +2,7 @@ import '../sass/App.scss';
 import Box from'./Box';
 import Button, { Temp } from './Button';
 import Background from './Background';
-import { useContext, createContext , useState , useRef } from 'react';
+import { useContext, createContext , useState , useRef , useEffect} from 'react';
 import ComB from './ComB'; 
 import ComC from './ComC'; 
 import { Provider, data } from './Provider';
@@ -23,8 +23,20 @@ function App() {
     clearInterval(ref.current)
   } 
   //BOX-2//
- 
-  const dataFromProvider = useContext(data)
+  
+  //   
+  
+  //BOX-3//
+  const [title, setTitle] = useState('') 
+  useEffect(() =>{
+    fetch('https://jsonplaceholder.typicode.com/posts/22')
+    .then(response => response.json())
+    .then(json => {
+      setTitle(json.title)
+    }, [])
+    //thêm [] để gọi API 1 lần
+  })
+
 
 
   return (
@@ -45,7 +57,9 @@ function App() {
             </box2.Provider>
             </Provider>
           </Box>
-          <Box></Box>
+          <Box>
+            <span className='box__content'>{title}</span>
+          </Box>
           <Box></Box>
           <Box></Box>
           <Box></Box>
