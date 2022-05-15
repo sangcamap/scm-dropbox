@@ -1,4 +1,3 @@
-
 function sayHello (){
     setTimeout(() =>{console.log('hello')}, 2000)
 }
@@ -12,10 +11,8 @@ let promise = new Promise((resolve, reject) => {
 })
 
 promise
-.then(()=>{ console.log("Thành công") })
 .then(()=>{ return new Promise((resolve) => {
     sayHello();
-    // resolve();
     setTimeout(resolve, 4000)
 })})
 .then((data)=>{ sayBye()})

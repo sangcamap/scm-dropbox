@@ -4,3 +4,6 @@ import squareNumber , { pi } from "./func.js";
 
 console.log(squareNumber(22));
 console.log(pi());
+
+
+

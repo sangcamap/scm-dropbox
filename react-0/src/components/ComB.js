@@ -1,12 +1,10 @@
-import React, {useContext} from 'react'
-import { box2 } from './App'
-import { data } from './Provider'
+import React, {memo} from 'react'
 
-export default function ComB() {
-  const dataFromProvider = useContext(data)
-  const box = useContext(box2)
-
+export default memo(function ComB() {
+  console.log("render B");
   return (
-    <div>Com-B {box.name}  {dataFromProvider.address}</div>
+    <div>ComB</div>
   )
-}
+})
+
+
