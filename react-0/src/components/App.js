@@ -1,53 +1,37 @@
 import '../sass/App.scss';
-// import ComB from './ComB'; 
-// import ComA from './ComA';
+import Content from './Content';
+import Button from './Button';
+import { Context, ContextProvider } from './Context';
+
 import React
   , { 
     useState,
     createContext,
-    memo
+    memo,
+    useContext
   } from 'react'
 
-  
-  const arr = [
-    {
-      id: '1',
-      name: 'honda'
-    },
-    {
-      id: '2',
-      name: 'xuzi'
-    },
-    {
-      id: '3',
-      name: 'py'
-    },
-  ]
-
-  const data = {
-    name: 'Sang',
-    age: '12',
-    tel: '123'
-  }
-
   function App() {
-  const [state, setState] = useState() 
-  const randomState = () => {
-    setState(arr[Math.floor(Math.random() * arr.length)])
+  const context = useContext(Context)
+  const [show, setShow] = useState(true)
+  const updateShow = () => {
+    if (show === true) {
+      setShow(false)
+    }
+    else {
+      setShow(true)
+    }
+    console.log(show)
   }
   
-  const [input, setInput] = useState()
-
-
   return (
-    <div className='box'>
-        <h1 {...data}> Thẻ này chứa props</h1>
-        <h1>Chọn: {input}</h1>
-        {
-          arr.map(
-            e => (<h1 key={e.id}><input type='radio' checked={ input === e.id} onChange={() => setInput(e.id)}/> Hello {e.name}</h1>)
-          )
-        }
+    <div className='App'>
+      <div className='box'>
+        {show == true ? (<Content></Content>) : ''}
+        <Button title={'Click me!'} onShow={updateShow}> </Button>
+        <input onChange={(e)=>{context.updateName(e.target.value)}}></input>
+        {/* <button onClick={updateShow}>OKKKKK</button> */}
+      </div>
     </div>
   );
 }

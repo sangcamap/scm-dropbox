@@ -1,6 +1,6 @@
 @import './Box.scss';
 @import './Button.scss';
-@import './Background.scss';
+
 
 .App{
     width: 100vw;
@@ -9,13 +9,4 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
-    position: relative;
-    overflow: hidden;
-    .Group{
-        display: grid;
-        grid-template-columns: auto auto auto;
-        gap: 40px;
-
-    }
 }
